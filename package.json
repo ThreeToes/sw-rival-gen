@@ -4,7 +4,10 @@
   "description": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp build && npm run lite",
+    "lite": "lite-server",
+    "postinstall": "typings install",
+    "typings": "typings"
   },
   "author": "Stephen Gream",
   "license": "GPL-3.0",
@@ -14,6 +17,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.15.0",
     "jasmine-core": "^2.4.1",
