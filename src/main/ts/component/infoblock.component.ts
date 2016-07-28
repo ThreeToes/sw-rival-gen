@@ -1,7 +1,7 @@
 /**
  * Created by poiso_000 on 28/07/2016.
  */
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Character} from "../model/character";
 
 @Component({
@@ -15,5 +15,6 @@ import {Character} from "../model/character";
     `
 })
 export class InfoBlockComponent{
+    @Input()
     character: Character;
 }

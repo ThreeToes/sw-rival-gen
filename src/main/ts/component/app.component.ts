@@ -4,6 +4,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Character} from "../model/character";
 import {CharacterComponent} from "./character.component";
+require('../../css/style.css');
 
 @Component({
     selector: 'npc-generator',
@@ -13,5 +14,10 @@ import {CharacterComponent} from "./character.component";
 export class AppComponent implements OnInit{
     currentCharacter: Character;
 
-    ngOnInit(){this.currentCharacter = new Character()}
+    ngOnInit(){
+        this.currentCharacter = new Character();
+        this.currentCharacter.name = 'Luke Skywalker';
+        this.currentCharacter.species = 'Human';
+        this.currentCharacter.archetype = 'Jedi';
+    }
 }
