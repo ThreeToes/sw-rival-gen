@@ -23,8 +23,8 @@ module.exports = {
             { test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/, loader: 'file?name=assets/[name].[hash].[ext]' },
             {
                 test: /\.css$/,
-                loader: 'raw'
-            }
+                loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+            },
         ]
     },
     output:{
@@ -41,6 +41,6 @@ module.exports = {
         }),
 
         new webpack.optimize.UglifyJsPlugin(),
-        new ExtractTextPlugin('[name].[hash].css')
+        new ExtractTextPlugin("[name].css", {allChunks: false})
     ]
 };
