@@ -4,7 +4,7 @@
 import {Component, Input} from '@angular/core';
 import {Character} from "../model/character";
 import {InfoBlockComponent} from "./infoblock.component";
-import {AttributeComponent} from "./attribute.component";
+import {AttributeBlockComponent} from "./attribute.block.component";
 import {SkillBlockComponent} from "./skillblock.component";
 
 @Component({
@@ -16,7 +16,7 @@ import {SkillBlockComponent} from "./skillblock.component";
             <skill-block [character]="character"></skill-block>
         </div>
     `,
-    directives: [InfoBlockComponent, AttributeComponent, SkillBlockComponent]
+    directives: [InfoBlockComponent, AttributeBlockComponent, SkillBlockComponent]
 })
 export class CharacterComponent {
     @Input()
