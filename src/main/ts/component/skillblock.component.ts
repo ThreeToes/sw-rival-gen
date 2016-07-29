@@ -1,8 +1,8 @@
 /**
  * Created by poiso_000 on 29/07/2016.
  */
-import {Component, Input, OnInit} from '@angular/core';
-import {Character, Skill} from "../model/";
+import {Component, Input} from '@angular/core';
+import {Character} from "../model/";
 
 @Component({
     selector: 'skill-block',
@@ -61,6 +61,8 @@ import {Character, Skill} from "../model/";
             [(ngModel)]="character.skills.brawl"/></li>
         <li>Gunnery: <input type="number" min="0" max="6" 
             [(ngModel)]="character.skills.gunnery"/></li>
+        <li>Lightsaber: <input type="number" min="0" max="6" 
+            [(ngModel)]="character.skills.lightsaber"/></li>
         <li>Melee: <input type="number" min="0" max="6" 
             [(ngModel)]="character.skills.melee"/></li>
         <li>Ranged (Light): <input type="number" min="0" max="6" 
@@ -86,7 +88,7 @@ import {Character, Skill} from "../model/";
     </div>
     `
 })
-export class SkillBlockComponent implements OnInit{
+export class SkillBlockComponent {
     @Input()
     character: Character;
 }

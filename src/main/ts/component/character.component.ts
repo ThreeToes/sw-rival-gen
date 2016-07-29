@@ -10,9 +10,11 @@ import {SkillBlockComponent} from "./skillblock.component";
 @Component({
     selector: 'character-component',
     template: `
-        <info-block [character]="character"></info-block>
-        <attribute-block [character]="character"></attribute-block>
-        <skill-block [character]="character"></skill-block>
+        <div class="character-container">
+            <info-block [character]="character"></info-block>
+            <attribute-block [character]="character"></attribute-block>
+            <skill-block [character]="character"></skill-block>
+        </div>
     `,
     directives: [InfoBlockComponent, AttributeComponent, SkillBlockComponent]
 })

@@ -5,6 +5,7 @@ import {Component, OnInit} from '@angular/core';
 import {Character} from "../model/character";
 import {CharacterComponent} from "./character.component";
 require('../../css/style.css');
+require('../../../../node_modules/bootstrap/dist/css/bootstrap.min.css');
 
 @Component({
     selector: 'npc-generator',
