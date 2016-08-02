@@ -16,6 +16,7 @@ export class Skills{
     education: number = 0;
     gunnery: number = 0;
     leadership: number = 0;
+    lightsaber: number = 0;
     lore: number = 0;
     mechanics: number = 0;
     medicine: number = 0;

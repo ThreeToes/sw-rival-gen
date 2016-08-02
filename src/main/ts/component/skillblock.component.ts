@@ -3,90 +3,58 @@
  */
 import {Component, Input} from '@angular/core';
 import {Character} from "../model/";
+import {SkillComponent} from "./skill.component";
 
 @Component({
     selector: 'skill-block',
     template: `
     <div class="skill-block-container">
-    <h3>Core Skills</h3>
-    <ul class="skill-group-container">
-        <li>Astrogation: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.astrogation"/></li>
-        <li>Athletics: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.athletics"/></li>
-        <li>Charm: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.charm"/></li>
-        <li>Coercion: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.coercion"/></li>
-        <li>Computers: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.computers"/></li>
-        <li>Cool: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.cool"/></li>
-        <li>Coordination: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.coordination"/></li>
-        <li>Deception: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.deception"/></li>
-        <li>Discipline: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.discipline"/></li>
-        <li>Leadership: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.leadership"/></li>
-        <li>Mechanics: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.mechanics"/></li>
-        <li>Medicine: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.medicine"/></li>
-        <li>Negotiation: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.negotiation"/></li>
-        <li>Perception: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.perception"/></li>
-        <li>Piloting (Planetary): <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.pilotingPlanetary"/></li>
-        <li>Piloting (Space): <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.pilotingSpace"/></li>
-        <li>Resilience: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.resilience"/></li>
-        <li>Skulduggery: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.skulduggery"/></li>
-        <li>Stealth: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.stealth"/></li>
-        <li>Streetwise: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.streetwise"/></li>
-        <li>Survival: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.survival"/></li>
-        <li>Vigilance: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.vigilance"/></li>
-    </ul>
-    <h3>Combat Skills</h3>
-    <ul class="skill-group-container">
-        <li>Brawl: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.brawl"/></li>
-        <li>Gunnery: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.gunnery"/></li>
-        <li>Lightsaber: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.lightsaber"/></li>
-        <li>Melee: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.melee"/></li>
-        <li>Ranged (Light): <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.rangedLight"/></li>
-        <li>Ranged (Heavy): <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.rangedHeavy"/></li>
-    </ul>
-    <h3>Knowledge Skills</h3>
-    <ul class="skill-group-container">
-        <li>Core Worlds: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.coreWorlds"/></li>
-        <li>Education: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.education"/></li>
-        <li>Lore: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.lore"/></li>
-        <li>Outer Rim: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.outerRim"/></li>
-        <li>Underworld: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.underworld"/></li>
-        <li>Xenology: <input type="number" min="0" max="6" 
-            [(ngModel)]="character.skills.xenology"/></li>
-    </ul>
+        <div class="skill-group-container">
+            <h3>Core Skills</h3>
+            <skill [magnitude]="character.skills.astrogation" [skillName]="'Astrogation'"></skill>
+            <skill [magnitude]="character.skills.athletics" [skillName]="'Athletics'"></skill>
+            <skill [magnitude]="character.skills.charm" [skillName]="'Charm'"></skill>
+            <skill [magnitude]="character.skills.coercion" [skillName]="'Coercion'"></skill>
+            <skill [magnitude]="character.skills.computers" [skillName]="'Computers'"></skill>
+            <skill [magnitude]="character.skills.cool" [skillName]="'Cool'"></skill>
+            <skill [magnitude]="character.skills.coordination" [skillName]="'Coordination'"></skill>
+            <skill [magnitude]="character.skills.deception" [skillName]="'Deception'"></skill>
+            <skill [magnitude]="character.skills.discipline" [skillName]="'Discipline'"></skill>
+            <skill [magnitude]="character.skills.leadership" [skillName]="'Leadership'"></skill>
+            <skill [magnitude]="character.skills.mechanics" [skillName]="'Mechanics'"></skill>
+            <skill [magnitude]="character.skills.medicine" [skillName]="'Medicine'"></skill>
+            <skill [magnitude]="character.skills.negotiation" [skillName]="'Negotiation'"></skill>
+            <skill [magnitude]="character.skills.perception" [skillName]="'Perception'"></skill>
+            <skill [magnitude]="character.skills.pilotingPlanetary" [skillName]="'Piloting (Planetary)'"></skill>
+            <skill [magnitude]="character.skills.pilotingSpace" [skillName]="'Piloting (Space)'"></skill>
+            <skill [magnitude]="character.skills.resilience" [skillName]="'Resilience'"></skill>
+            <skill [magnitude]="character.skills.skulduggery" [skillName]="'Skulduggery'"></skill>
+            <skill [magnitude]="character.skills.stealth" [skillName]="'Stealth'"></skill>
+            <skill [magnitude]="character.skills.streetwise" [skillName]="'Streetwise'"></skill>
+            <skill [magnitude]="character.skills.survival" [skillName]="'Survival'"></skill>
+            <skill [magnitude]="character.skills.vigilance" [skillName]="'Vigilance'"></skill>
+        </div>
+        <div class="skill-group-container">
+            <h3>Combat Skills</h3>
+            <skill [magnitude]="character.skills.brawl" [skillName]="'Brawl'"></skill>
+            <skill [magnitude]="character.skills.gunnery" [skillName]="'Gunnery'"></skill>
+            <skill [magnitude]="character.skills.lightsaber" [skillName]="'Lightsaber'"></skill>
+            <skill [magnitude]="character.skills.melee" [skillName]="'Melee'"></skill>
+            <skill [magnitude]="character.skills.rangedLight" [skillName]="'Ranged (Light)'"></skill>
+            <skill [magnitude]="character.skills.rangedHeavy" [skillName]="'Ranged (Heavy)'"></skill>
+        </div>
+        <div class="skill-group-container">
+        <h3>Knowledge Skills</h3>
+            <skill [magnitude]="character.skills.coreWorlds" [skillName]="'Core Worlds'"></skill>
+            <skill [magnitude]="character.skills.education" [skillName]="'Education'"></skill>
+            <skill [magnitude]="character.skills.lore" [skillName]="'Lore'"></skill>
+            <skill [magnitude]="character.skills.outerRim" [skillName]="'Outer Rim'"></skill>
+            <skill [magnitude]="character.skills.underworld" [skillName]="'Underworld'"></skill>
+            <skill [magnitude]="character.skills.xenology" [skillName]="'Xenology'"></skill>
+        </div>
     </div>
-    `
+    `,
+    directives:[SkillComponent]
 })
 export class SkillBlockComponent {
     @Input()

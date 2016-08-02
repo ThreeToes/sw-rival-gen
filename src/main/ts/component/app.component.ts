@@ -20,5 +20,19 @@ export class AppComponent implements OnInit{
         this.currentCharacter.name = 'Luke Skywalker';
         this.currentCharacter.species = 'Human';
         this.currentCharacter.archetype = 'Jedi';
+
+        this.currentCharacter.skills.lightsaber = 3;
+        this.currentCharacter.skills.rangedLight = 2;
+        this.currentCharacter.skills.melee = 3;
+        this.currentCharacter.skills.leadership = 3;
+        this.currentCharacter.skills.pilotingPlanetary = 2;
+        this.currentCharacter.skills.pilotingSpace = 3;
+
+        this.currentCharacter.attributes.brawn = 3;
+        this.currentCharacter.attributes.agility = 4;
+        this.currentCharacter.attributes.cunning = 2;
+        this.currentCharacter.attributes.intelligence = 2;
+        this.currentCharacter.attributes.willpower = 3;
+        this.currentCharacter.attributes.presence = 3;
     }
 }

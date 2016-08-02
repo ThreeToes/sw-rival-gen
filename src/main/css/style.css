@@ -3,3 +3,23 @@
     flex-wrap: wrap;
 }
 
+.attributes-container{
+    width:100%;
+    display: flex;
+    align-items: stretch;
+}
+
+.attribute-component{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.attribute-component label{
+    order: 2;
+}
+
+.attribute-component input{
+    order: 1;
+}
