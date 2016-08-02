@@ -9,10 +9,15 @@ var webpackConfig = require("./webpack.common.js");
 
 gulp.task("default", ["webpack-dev-server"]);
 
-gulp.task('build', function(){
+gulp.task('build',['copySpeciesJson'], function(){
     return gulp.src('src/ts/app.ts')
         .pipe(webpack(require('./webpack.common.js')))
         .pipe(gulp.dest('build'))
+});
+
+gulp.task('copySpeciesJson',function () {
+    return gulp.src('src/main/json/**/*.json')
+        .pipe(gulp.dest('build'));
 });
 
 gulp.task("webpack-dev-server", function(callback) {
