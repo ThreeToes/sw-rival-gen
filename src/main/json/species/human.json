@@ -1,5 +1,5 @@
 {
-  prefixes:[
+  "prefixes":[
     "Arn",
     "Bail",
     "Carlist",
@@ -79,7 +79,7 @@
     "Sola",
     "Winama"
   ],
-  suffixes:[
+  "suffixes":[
     "Durane",
     "Horada",
     "Ismaren",
@@ -128,5 +128,5 @@
     "Veruna",
     "Zapalo"
   ],
-  joiner: " "
+  "joiner": " "
 }

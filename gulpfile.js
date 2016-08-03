@@ -12,12 +12,12 @@ gulp.task("default", ["webpack-dev-server"]);
 gulp.task('build',['copySpeciesJson'], function(){
     return gulp.src('src/ts/app.ts')
         .pipe(webpack(require('./webpack.common.js')))
-        .pipe(gulp.dest('build'))
+        .pipe(gulp.dest('build/dist'))
 });
 
 gulp.task('copySpeciesJson',function () {
     return gulp.src('src/main/json/**/*.json')
-        .pipe(gulp.dest('build'));
+        .pipe(gulp.dest('build/dist'));
 });
 
 gulp.task("webpack-dev-server", function(callback) {
