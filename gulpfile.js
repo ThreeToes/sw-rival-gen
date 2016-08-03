@@ -6,6 +6,7 @@ var gutil = require("gulp-util");
 var webpack = require('webpack-stream');
 var WebpackDevServer = require("webpack-dev-server");
 var webpackConfig = require("./webpack.common.js");
+var jsonMinify = require('gulp-json-minify');
 
 gulp.task("default", ["webpack-dev-server"]);
 
@@ -17,6 +18,7 @@ gulp.task('build',['copySpeciesJson'], function(){
 
 gulp.task('copySpeciesJson',function () {
     return gulp.src('src/main/json/**/*.json')
+        .pipe(jsonMinify())
         .pipe(gulp.dest('build/dist'));
 });
 
