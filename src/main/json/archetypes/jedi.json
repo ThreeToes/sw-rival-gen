@@ -1,0 +1,199 @@
+{
+  "name": "jedi",
+  "titles": ["Jedi Master", "Jedi Knight", "Exile", "Journeyman"],
+  "stats": [
+    {
+      "brawn": 4,
+      "agility": 3,
+      "intelligence": 2,
+      "cunning": 2,
+      "willpower": 3,
+      "presence": 2
+    },
+    {
+      "brawn": 2,
+      "agility": 3,
+      "intelligence": 4,
+      "cunning": 3,
+      "willpower": 2,
+      "presence": 2
+    },
+    {
+      "brawn": 2,
+      "agility": 2,
+      "intelligence": 3,
+      "cunning": 4,
+      "willpower": 3,
+      "presence": 2
+    },
+    {
+      "brawn": 2,
+      "agility": 2,
+      "intelligence": 3,
+      "cunning": 2,
+      "willpower": 3,
+      "presence": 4
+    },
+    {
+      "brawn": 3,
+      "agility": 2,
+      "intelligence": 3,
+      "cunning": 3,
+      "willpower": 2,
+      "presence": 3
+    },
+    {
+      "brawn": 2,
+      "agility": 3,
+      "intelligence": 2,
+      "cunning": 3,
+      "willpower": 4,
+      "presence": 2
+    },
+    {
+      "brawn": 3,
+      "agility": 3,
+      "intelligence": 2,
+      "cunning": 3,
+      "willpower": 2,
+      "presence": 3
+    },
+    {
+      "brawn": 3,
+      "agility": 1,
+      "intelligence": 3,
+      "cunning": 3,
+      "willpower": 4,
+      "presence": 2
+    },
+    {
+      "brawn": 4,
+      "agility": 4,
+      "intelligence": 1,
+      "cunning": 1,
+      "willpower": 2,
+      "presence": 1
+    }
+  ],
+  "skillSets": [
+    {
+      "name": "lightsaber",
+      "min": 1,
+      "max": 4
+    },
+    {
+      "name": "pilotingPlanetary",
+      "min": 1,
+      "max": 3
+    },
+    {
+      "name": "pilotingSpace",
+      "min": 1,
+      "max": 2
+    },
+    {
+      "name": "melee",
+      "min": 1,
+      "max": 4
+    },
+    {
+      "name": "rangedLight",
+      "min": 1,
+      "max": 2
+    },
+    {
+      "name": "rangedHeavy",
+      "min": 1,
+      "max": 2
+    },
+    {
+      "name": "charm",
+      "min": 1,
+      "max": 3
+    },
+    {
+      "name": "negotiation",
+      "min": 1,
+      "max": 3
+    },
+    {
+      "name": "deception",
+      "min": 1,
+      "max": 3
+    },
+    {
+      "name": "vigilance",
+      "min": 1,
+      "max": 3
+    },
+    {
+      "name": "stealth",
+      "min": 1,
+      "max": 3
+    },
+    {
+      "name": "lore",
+      "min": 1,
+      "max": 3
+    },
+    {
+      "name": "outerRim",
+      "min": 1,
+      "max": 3
+    },
+    {
+      "name": "coreWorlds",
+      "min": 1,
+      "max": 3
+    }
+  ],
+  "maxForceRating": 3,
+  "forceChance": 1,
+  "minSkillSets": 2,
+  "maxSkillSets": 4,
+  "minTalents": 1,
+  "maxTalents": 2,
+  "optionalTalents": [
+    {
+      "name": "Adversary",
+      "reference": "EotE Core p132, AoR Core p142, F&D Core p138"
+    },
+    {
+      "name": "Animal Bond",
+      "reference": "F&D Core p138"
+    },
+    {
+      "name": "Duelist's Training",
+      "reference": "F&D Core p142"
+    },
+    {
+      "name": "Dodge",
+      "reference": "EotE Core p135, AoR Core p146, F&D Core p142"
+    },
+    {
+      "name": "Duelist's Training",
+      "reference": "F&D Core p142"
+    },
+    {
+      "name": "Jump Up",
+      "reference": "EotE Core p138, AoR Core p150, F&D Core p146"
+    },
+    {
+      "name": "Keen Eyed",
+      "reference": "F&D Core p146"
+    },
+    {
+      "name": "Kill With Kindness",
+      "reference": "EotE Core p138, AoR Core p150, F&D Core p146"
+    },
+    {
+      "name": "Nobody's Fool",
+      "reference": "EotE Core p139, AoR Core p153, F&D Core p148"
+    },
+    {
+      "name": "Now You See Me",
+      "reference": "F&D Core p148"
+    }
+  ],
+  "mandatoryTalents":[]
+}

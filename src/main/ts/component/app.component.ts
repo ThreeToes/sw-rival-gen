@@ -10,7 +10,7 @@ require('../../../../node_modules/bootstrap/dist/css/bootstrap.min.css');
 
 @Component({
     selector: 'npc-generator',
-    template: '<character-component [character]="currentCharacter"></character-component>',
+    template: '<button (click)="generateNewCharacter()">Generate Character</button><character-component [character]="currentCharacter"></character-component>',
     directives: [CharacterComponent],
     providers: [{provide: CharacterGenerator,useClass:DefaultCharacterGenerator}]
 })
@@ -21,24 +21,14 @@ export class AppComponent implements OnInit{
     }
 
     ngOnInit(){
+        this.charGenerator.onInit();
+    }
+
+    generateNewCharacter(){
         this.charGenerator.generateCharacter("human","jedi")
             .subscribe(character => {
-                this.currentCharacter = character;
-
-                    this.currentCharacter.skills.lightsaber = 3;
-                    this.currentCharacter.skills.rangedLight = 2;
-                    this.currentCharacter.skills.melee = 3;
-                    this.currentCharacter.skills.leadership = 3;
-                    this.currentCharacter.skills.pilotingPlanetary = 2;
-                    this.currentCharacter.skills.pilotingSpace = 3;
-
-                    this.currentCharacter.attributes.brawn = 3;
-                    this.currentCharacter.attributes.agility = 4;
-                    this.currentCharacter.attributes.cunning = 2;
-                    this.currentCharacter.attributes.intelligence = 2;
-                    this.currentCharacter.attributes.willpower = 3;
-                    this.currentCharacter.attributes.presence = 3;
-            },
-            error => console.log(error));
+                    this.currentCharacter = character;
+                },
+                error => console.log(error));
     }
 }

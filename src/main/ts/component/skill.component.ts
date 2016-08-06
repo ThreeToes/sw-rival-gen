@@ -6,9 +6,8 @@ import {Component, Input} from '@angular/core';
 @Component({
     selector: 'skill',
     template: `
-        <div>
-            <label><strong>{{skillName}}:</strong></label>
-            <input type="number" min="0" max="6" [(ngModel)]="magnitude"/>
+        <div *ngIf="magnitude > 0">
+            <strong>{{skillName}}:</strong> <span>{{magnitude}}</span>
         </div>`
 })
 export class SkillComponent {
