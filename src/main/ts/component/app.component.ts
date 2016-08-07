@@ -10,14 +10,29 @@ require('../../../../node_modules/bootstrap/dist/css/bootstrap.min.css');
 
 @Component({
     selector: 'npc-generator',
-    template: '<button (click)="generateNewCharacter()">Generate Character</button><character-component [character]="currentCharacter"></character-component>',
+    template: `
+        <div class="generator-block">
+            <select [(ngModel)]="selectedSpecies">
+                <option *ngFor="let s of charGenerator.manifest.species" [value]="s">{{s}}</option>
+            </select>
+            <select [(ngModel)]="selectedArchetype">
+                <option *ngFor="let a of charGenerator.manifest.archetypes" [value]="a">{{a}}</option>
+            </select>
+            <button (click)="generateNewCharacter()">Generate Character</button>
+        </div>
+        <character-component [character]="currentCharacter"></character-component>
+    `,
     directives: [CharacterComponent],
-    providers: [{provide: CharacterGenerator,useClass:DefaultCharacterGenerator}]
+    providers: [{provide: CharacterGenerator, useClass: CharacterGenerator}]
 })
 export class AppComponent implements OnInit{
     currentCharacter: Character;
-    constructor(private charGenerator: CharacterGenerator){
+    charGenerator: CharacterGenerator;
+    selectedSpecies: String = "";
+    selectedArchetype: String = "";
+    constructor(charGenerator: CharacterGenerator){
         this.currentCharacter = new Character();
+        this.charGenerator = charGenerator;
     }
 
     ngOnInit(){
@@ -25,7 +40,7 @@ export class AppComponent implements OnInit{
     }
 
     generateNewCharacter(){
-        this.charGenerator.generateCharacter("human","jedi")
+        this.charGenerator.generateCharacter(this.selectedSpecies,this.selectedArchetype)
             .subscribe(character => {
                     this.currentCharacter = character;
                 },

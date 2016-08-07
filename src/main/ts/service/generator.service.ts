@@ -7,31 +7,22 @@ import {Http, Response} from '@angular/http';
 import {Injectable, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 
-/**
- * Interface for character generators
- */
-export class CharacterGenerator{
-    /**
-     * Generate a character synchronously
-     * @param species Character species
-     * @param archetype Character archetype
-     */
-    generateCharacter(species: String, archetype: String) : Observable<Character>{
-        throw new Error();
-    }
-
-    onInit(): any;
-}
-
 @Injectable()
-export class DefaultCharacterGenerator implements CharacterGenerator {
+export class CharacterGenerator {
 
+    manifest = {"species":[],"archetypes":[]};
     private species = {};
     private archetypes = {};
     private personalities = {};
 
     constructor(private http : Http){
     }
+
+    /**
+     * Generate a character synchronously
+     * @param species Character species
+     * @param archetype Character archetype
+     */
     generateCharacter(species:String, archetype:String): Observable<Character> {
         let speciesDef = this.species[species];
         let archetypeDef = this.archetypes[archetype];
@@ -119,19 +110,6 @@ export class DefaultCharacterGenerator implements CharacterGenerator {
         return Observable.throw(errMsg);
     }
 
-    private extractData(res: Response, species: String, archetype: String) : Character{
-        let body = res.json();
-        let firstNames = body.prefixes;
-        let firstName = firstNames[Math.floor(Math.random()*firstNames.length)];
-        let lastNames = body.suffixes;
-        let lastName = lastNames[Math.floor(Math.random()*lastNames.length)];
-        let char = new Character();
-        char.name = [firstName, lastName].join(body.joiner);
-        char.species = this.capitalCase(species);
-        char.archetype = this.capitalCase(archetype);
-        return char;
-    }
-
     private extractSpeciesData(res) : void {
         this.species[res.name] = res;
     }
@@ -168,6 +146,8 @@ export class DefaultCharacterGenerator implements CharacterGenerator {
                         .catch(this.handleError)
                         .subscribe(a => this.extractArchetypeData(a));
                 }
+                this.manifest.species = body.species;
+                this.manifest.archetypes = body.archetypes;
             });
         let personalityUrl = 'personalities.json';
         this.http.get(personalityUrl)
