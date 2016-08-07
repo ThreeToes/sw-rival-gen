@@ -5,8 +5,7 @@ import {Component, OnInit, Injectable} from '@angular/core';
 import {Character} from "../model/character";
 import {CharacterComponent} from "./character.component";
 import {CharacterGenerator} from "../service/generator.service";
-import {capitalCase} from "../utils/string.utils";
-import {getRandomElement} from "../utils/number.utils";
+import {getRandomElement} from "../utils";
 require('../../css/style.css');
 require('../../../../node_modules/bootstrap/dist/css/bootstrap.min.css');
 

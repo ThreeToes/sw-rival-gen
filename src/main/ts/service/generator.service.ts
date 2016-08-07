@@ -6,9 +6,7 @@ import {Character} from '../model/character';
 import {Http, Response} from '@angular/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {capitalCase} from "../utils/string.utils";
-import {shuffle} from "../utils/array.utils";
-import {getRandomArbitrary} from "../utils/number.utils";
+import {capitalCase,shuffle,getRandomArbitrary} from "../utils";
 
 @Injectable()
 export class CharacterGenerator {
