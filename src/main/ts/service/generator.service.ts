@@ -28,6 +28,7 @@ export class DefaultCharacterGenerator implements CharacterGenerator {
 
     private species = {};
     private archetypes = {};
+    private personalities = {};
 
     constructor(private http : Http){
     }
@@ -63,6 +64,14 @@ export class DefaultCharacterGenerator implements CharacterGenerator {
         char.attributes.cunning = stats.cunning;
         char.attributes.willpower = stats.willpower;
         char.attributes.presence = stats.presence;
+
+        this.shuffle(this.personalities.positiveTraits);
+        this.shuffle(this.personalities.neutralTraits);
+        this.shuffle(this.personalities.negativeTraits);
+
+        char.personalityTraits = char.personalityTraits.concat(this.personalities.positiveTraits.slice(0,2));
+        char.personalityTraits = char.personalityTraits.concat(this.personalities.neutralTraits.slice(0,1));
+        char.personalityTraits = char.personalityTraits.concat(this.personalities.negativeTraits.slice(0,2));
 
         char.talents = this.selectTalents(archetypeDef);
         console.log(char);
@@ -160,5 +169,10 @@ export class DefaultCharacterGenerator implements CharacterGenerator {
                         .subscribe(a => this.extractArchetypeData(a));
                 }
             });
+        let personalityUrl = 'personalities.json';
+        this.http.get(personalityUrl)
+            .map(this.getJson)
+            .catch(this.handleError)
+            .subscribe(body => this.personalities = body);
     }
 }

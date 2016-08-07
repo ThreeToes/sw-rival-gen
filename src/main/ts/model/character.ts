@@ -12,10 +12,12 @@ export class Character{
     attributes: Attributes;
     skills: Skills;
     talents: Talent[];
+    personalityTraits: String[];
 
     public constructor(){
         this.attributes = new Attributes();
         this.skills = new Skills();
         this.talents = [];
+        this.personalityTraits = [];
     }
 }
