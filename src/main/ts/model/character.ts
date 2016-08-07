@@ -20,4 +20,8 @@ export class Character{
         this.talents = [];
         this.personalityTraits = [];
     }
+
+    isInitialised(): boolean {
+        return this.attributes.brawn != 0;
+    }
 }

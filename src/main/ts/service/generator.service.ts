@@ -4,15 +4,21 @@
 
 import {Character} from '../model/character';
 import {Http, Response} from '@angular/http';
-import {Injectable, OnInit} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
+import {capitalCase} from "../utils/string.utils";
+import {shuffle} from "../utils/array.utils";
+import {getRandomArbitrary} from "../utils/number.utils";
 
 @Injectable()
 export class CharacterGenerator {
 
     manifest = {"species":[],"archetypes":[]};
+    loaded : boolean = false;
     private species = {};
+    private speciesLoaded : number = 0;
     private archetypes = {};
+    private archetypesLoaded : number = 0;
     private personalities = {};
 
     constructor(private http : Http){
@@ -33,22 +39,22 @@ export class CharacterGenerator {
         let firstName = speciesDef.prefixes[Math.floor(Math.random()*speciesDef.prefixes.length - 1)];
         let title = "";
         if(archetypeDef.titles.length > 0){
-            title = archetypeDef.titles[this.getRandomArbitrary(0, archetypeDef.titles.length - 1)] + " ";
+            title = archetypeDef.titles[getRandomArbitrary(0, archetypeDef.titles.length - 1)] + " ";
         }
 
         char.name = title + [firstName, lastName].join(speciesDef.joiner);
-        char.species = this.capitalCase(species);
-        char.archetype = this.capitalCase(archetype);
+        char.species = capitalCase(species);
+        char.archetype = capitalCase(archetype);
 
         let skills = this.selectSkills(archetypeDef);
         let i = skills.length;
         while(i--){
             let skill = skills[i];
-            let j = this.getRandomArbitrary(skill.min, skill.max);
+            let j = getRandomArbitrary(skill.min, skill.max);
             char.skills[skill.name] = j;
         }
 
-        let stats = archetypeDef.stats[this.getRandomArbitrary(0, archetypeDef.stats.length - 1)];
+        let stats = archetypeDef.stats[getRandomArbitrary(0, archetypeDef.stats.length - 1)];
         char.attributes.brawn = stats.brawn;
         char.attributes.agility = stats.agility;
         char.attributes.intelligence = stats.intelligence;
@@ -56,24 +62,25 @@ export class CharacterGenerator {
         char.attributes.willpower = stats.willpower;
         char.attributes.presence = stats.presence;
 
-        this.shuffle(this.personalities.positiveTraits);
-        this.shuffle(this.personalities.neutralTraits);
-        this.shuffle(this.personalities.negativeTraits);
+        shuffle(this.personalities.positiveTraits);
+        shuffle(this.personalities.neutralTraits);
+        shuffle(this.personalities.negativeTraits);
+        let personalityCounts = [1,2,3];
+        shuffle(personalityCounts);
 
-        char.personalityTraits = char.personalityTraits.concat(this.personalities.positiveTraits.slice(0,2));
-        char.personalityTraits = char.personalityTraits.concat(this.personalities.neutralTraits.slice(0,1));
-        char.personalityTraits = char.personalityTraits.concat(this.personalities.negativeTraits.slice(0,2));
+        char.personalityTraits = char.personalityTraits.concat(this.personalities.positiveTraits.slice(0,personalityCounts[0]));
+        char.personalityTraits = char.personalityTraits.concat(this.personalities.neutralTraits.slice(0,personalityCounts[1]));
+        char.personalityTraits = char.personalityTraits.concat(this.personalities.negativeTraits.slice(0,personalityCounts[2]));
 
         char.talents = this.selectTalents(archetypeDef);
-        console.log(char);
         return new Observable.fromPromise(Promise.resolve(char));
     }
 
     private selectTalents(archetype){
         let min = archetype.minTalents;
         let max = archetype.maxTalents;
-        let si = this.getRandomArbitrary(min, max);
-        this.shuffle(archetype.optionalTalents);
+        let si = getRandomArbitrary(min, max);
+        shuffle(archetype.optionalTalents);
 
         return archetype.optionalTalents.slice(0, si);
     }
@@ -81,26 +88,12 @@ export class CharacterGenerator {
     private selectSkills(archetype) {
         let min = archetype.minSkillSets;
         let max = archetype.maxSkillSets;
-        let si = this.getRandomArbitrary(min, max);
+        let si = getRandomArbitrary(min, max);
 
         //Flicks the array around in place, but should be ok
-        this.shuffle(archetype.skillSets);
+        shuffle(archetype.skillSets);
 
         return archetype.skillSets.slice(0, si);
-    }
-
-    private shuffle(a) {
-       var j, x, i;
-        for (i = a.length; i; i--) {
-            j = Math.floor(Math.random() * i);
-            x = a[i - 1];
-            a[i - 1] = a[j];
-            a[j] = x;
-        }
-    }
-
-    private getRandomArbitrary(min, max){
-        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
     private handleError (error: any) {
@@ -112,18 +105,24 @@ export class CharacterGenerator {
 
     private extractSpeciesData(res) : void {
         this.species[res.name] = res;
+        this.speciesLoaded++;
+        this.setLoadState();
+    }
+
+    private setLoadState(){
+        this.loaded =
+            this.speciesLoaded >= this.manifest.species.length
+            && this.archetypesLoaded >= this.manifest.archetypes.length;
     }
 
     private extractArchetypeData(body) : void {
         this.archetypes[body.name] = body;
+        this.archetypesLoaded++;
+        this.setLoadState();
     }
 
     private getJson(res: Response){
         return res.json();
-    }
-
-    private capitalCase(s : String): String{
-        return s.charAt(0).toUpperCase() + s.slice(1);
     }
 
     onInit(): any {

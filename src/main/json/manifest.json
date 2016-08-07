@@ -1,4 +1,4 @@
 {
-  "species": ["human"],
-  "archetypes": ["jedi"]
+  "species": ["gand","human","twilek"],
+  "archetypes": ["jedi", "merchant"]
 }

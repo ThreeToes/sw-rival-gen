@@ -6,7 +6,7 @@ import {Component, Input} from '@angular/core';
 @Component({
     selector: 'skill',
     template: `
-        <div *ngIf="magnitude > 0">
+        <div *ngIf="magnitude > 0" class="skill-container">
             <strong>{{skillName}}:</strong> <span>{{magnitude}}</span>
         </div>`
 })

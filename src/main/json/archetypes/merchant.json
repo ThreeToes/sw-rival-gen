@@ -1,0 +1,92 @@
+{
+  "name": "merchant",
+  "titles": [""],
+  "stats": [
+    {
+      "brawn": 2,
+      "agility": 2,
+      "intelligence": 2,
+      "cunning": 3,
+      "willpower": 2,
+      "presence": 4
+    },
+    {
+      "brawn": 2,
+      "agility": 2,
+      "intelligence": 2,
+      "cunning": 3,
+      "willpower": 3,
+      "presence": 3
+    },
+    {
+      "brawn": 2,
+      "agility": 2,
+      "intelligence": 4,
+      "cunning": 3,
+      "willpower": 2,
+      "presence": 3
+    }
+  ],
+  "skillSets": [
+    {
+      "name": "charm",
+      "min": 1,
+      "max": 3
+    },
+    {
+      "name": "negotiate",
+      "min": 1,
+      "max": 3
+    },
+    {
+      "name": "deception",
+      "min": 1,
+      "max": 2
+    },
+    {
+      "name": "vigilance",
+      "min": 1,
+      "max": 4
+    },
+    {
+      "name": "rangedLight",
+      "min": 1,
+      "max": 2
+    },
+    {
+      "name": "lore",
+      "min": 1,
+      "max": 3
+    }
+  ],
+  "maxForceRating": 1,
+  "forceChance": 0.05,
+  "minSkillSets": 3,
+  "maxSkillSets": 5,
+  "minTalents": 0,
+  "maxTalents": 2,
+  "optionalTalents": [
+    {
+      "name": "Black Market Contacts",
+      "reference": "EotE Core p132"
+    },
+    {
+      "name": "Convincing Demeanor",
+      "reference": "EotE Core p133, AoR Core p145"
+    },
+    {
+      "name": "Indistinguishable",
+      "reference": "EotE Core p137, AoR Core p149, F&D Core p145"
+    },
+    {
+      "name": "Kill With Kindness",
+      "reference": "EotE Core p138, AoR Core p150, F&D Core p146"
+    },
+    {
+      "name": "Nobody's Fool",
+      "reference": "EotE Core p139, AoR Core p153, F&D Core p148"
+    }
+  ],
+  "mandatoryTalents":[],
+  "equipment":[]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "gand",
+  "prefixes":[
+    "This"
+  ],
+  "suffixes":[
+    "Gand"
+  ],
+  "joiner": " "
+}

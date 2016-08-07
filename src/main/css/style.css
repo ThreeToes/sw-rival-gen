@@ -1,25 +1,65 @@
-.character-component{
-    display: flex;
-    flex-wrap: wrap;
+html,body{
+    width:100%;
+    height: 100%;
 }
 
-.attributes-container{
-    width:100%;
+.character-container {
     display: flex;
-    align-items: stretch;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.info-block-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.info-block-entry {
+    flex-grow: 1;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-basis: 25em;
+    padding: 1em;
+}
+
+.attributes-container {
+    display: flex;
+    align-items: flex-start;
 }
 
 .attribute-component{
-    display: flex;
-    flex-direction: column;
     flex-grow: 1;
-    flex-basis: 0;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 1em;
+    display: flex;
+    flex-basis: 10em;
+}
+
+.attribute-component p,label{
+    text-align: center;
+}
+
+.attribute-component p {
+    order: 1;
+    font-size: large;
 }
 
 .attribute-component label{
     order: 2;
+    font-weight: bold;
 }
 
-.attribute-component input{
-    order: 1;
+.skill-block-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
+
+.skill-group-container{
+    display: flex;
+    flex-direction: column;
+    min-width: 25em;
+}
+
+.generator-block{}

@@ -8,9 +8,9 @@ import {Character} from "../model/character";
     selector: 'info-block',
     template: `
         <div class="info-block-container">
-            <input class="info-block-input" placeholder="Name..."  [(ngModel)]="character.name"/>
-            <input class="info-block-input" placeholder="Species..." [(ngModel)]="character.species" />
-            <input class="info-block-input" placeholder="Archetype..." [(ngModel)]="character.archetype"/>
+            <div class="info-block-entry"><strong>Name:</strong>{{character.name}}</div>
+            <div class="info-block-entry"><strong>Species:</strong>{{character.species}}</div>
+            <div class="info-block-entry"><strong>Archetype:</strong>{{character.archetype}}</div>
         </div>
     `
 })

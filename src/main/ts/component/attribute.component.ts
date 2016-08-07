@@ -8,7 +8,7 @@ import {Component, Input} from '@angular/core';
     template: `
         <div class="attribute-component">
             <label>{{attributeName}}</label>
-            <input type="number" min="1" max="6" [(ngModel)]="magnitude"/>
+            <p>{{magnitude}}</p>
         </div>
     `
 })
