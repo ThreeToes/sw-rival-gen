@@ -6,7 +6,7 @@ import {Character} from '../model/character';
 import {Http, Response} from '@angular/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {capitalCase,shuffle,getRandomArbitrary} from "../utils";
+import {capitalCase,shuffle,getRandomArbitrary,getRandomElement} from "../utils";
 
 @Injectable()
 export class CharacterGenerator {
@@ -33,14 +33,10 @@ export class CharacterGenerator {
 
         let char = new Character();
 
-        let lastName = speciesDef.suffixes[Math.floor(Math.random()*speciesDef.suffixes.length - 1)];
-        let firstName = speciesDef.prefixes[Math.floor(Math.random()*speciesDef.prefixes.length - 1)];
-        let title = "";
-        if(archetypeDef.titles.length > 0){
-            title = archetypeDef.titles[getRandomArbitrary(0, archetypeDef.titles.length - 1)] + " ";
-        }
+        let lastName = getRandomElement(speciesDef.suffixes);
+        let firstName = getRandomElement(speciesDef.prefixes);
 
-        char.name = title + [firstName, lastName].join(speciesDef.joiner);
+        char.name = [firstName, lastName].join(speciesDef.joiner);
         char.species = capitalCase(species);
         char.archetype = capitalCase(archetype);
 
@@ -60,15 +56,9 @@ export class CharacterGenerator {
         char.attributes.willpower = stats.willpower;
         char.attributes.presence = stats.presence;
 
-        shuffle(this.personalities.positiveTraits);
-        shuffle(this.personalities.neutralTraits);
-        shuffle(this.personalities.negativeTraits);
-        let personalityCounts = [1,2,3];
-        shuffle(personalityCounts);
+        shuffle(this.personalities.traits);
 
-        char.personalityTraits = char.personalityTraits.concat(this.personalities.positiveTraits.slice(0,personalityCounts[0]));
-        char.personalityTraits = char.personalityTraits.concat(this.personalities.neutralTraits.slice(0,personalityCounts[1]));
-        char.personalityTraits = char.personalityTraits.concat(this.personalities.negativeTraits.slice(0,personalityCounts[2]));
+        char.personalityTraits = char.personalityTraits.concat(this.personalities.traits.slice(0,3));
 
         char.talents = this.selectTalents(archetypeDef);
         return new Observable.fromPromise(Promise.resolve(char));

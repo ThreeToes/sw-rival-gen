@@ -1,0 +1,83 @@
+{
+  "name": "tech",
+  "stats": [
+    {
+      "brawn": 3,
+      "agility": 2,
+      "intelligence": 3,
+      "cunning": 3,
+      "willpower": 2,
+      "presence": 2
+    },
+    {
+      "brawn": 2,
+      "agility": 2,
+      "intelligence": 4,
+      "cunning": 3,
+      "willpower": 2,
+      "presence": 1
+    },
+    {
+      "brawn": 3,
+      "agility": 2,
+      "intelligence": 4,
+      "cunning": 1,
+      "willpower": 2,
+      "presence": 1
+    },
+    {
+      "brawn": 4,
+      "agility": 1,
+      "intelligence": 4,
+      "cunning": 2,
+      "willpower": 2,
+      "presence": 1
+    }
+  ],
+  "skillSets": [
+    {
+      "name": "computers",
+      "min": 2,
+      "max": 3
+    },
+    {
+      "name": "mechanics",
+      "min": 2,
+      "max": 3
+    },
+    {
+      "name": "skulduggery",
+      "min": 1,
+      "max": 3
+    },
+    {
+      "name": "education",
+      "min": 1,
+      "max": 4
+    },
+    {
+      "name": "pilotingPlanetary",
+      "min": 2,
+      "max": 3
+    }
+  ],
+  "maxForceRating": 1,
+  "forceChance": 0.05,
+  "minSkillSets": 3,
+  "maxSkillSets": 3,
+  "minTalents": 0,
+  "maxTalents": 1,
+  "optionalTalents": [
+    {
+      "name": "Inventor",
+      "reference": "EotE Core p137, AoR Core p150, F&D 146"
+    },
+    {
+      "name": "Redundant Systems",
+      "reference": "EotE Core p133, AoR Core p154"
+    }
+  ],
+  "mandatoryTalents":[],
+  "equipment":[],
+  "weapons":[]
+}

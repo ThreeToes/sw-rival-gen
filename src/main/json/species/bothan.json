@@ -1,0 +1,34 @@
+{
+  "name": "bothan",
+  "prefixes":[
+    "Asyr",
+    "Kolir",
+    "Mineth",
+    "Rasher",
+    "Yaqeel",
+    "Roz",
+    "Borsk",
+    "Grendu",
+    "Karka",
+    "Laryn",
+    "Peshk",
+    "Polo",
+    "Tav",
+    "Tiurrg"
+  ],
+  "suffixes":[
+    "Brei'lya",
+    "Drey'lye",
+    "Ke'e",
+    "Kre'fey",
+    "Sei'lar",
+    "Se'lab",
+    "Vri'syk",
+    "Kro'dae",
+    "Brei'e",
+    "Kre'lya",
+    "Se'syk",
+    "Vri'lya"
+  ],
+  "joiner": " "
+}

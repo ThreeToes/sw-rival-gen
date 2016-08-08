@@ -1,4 +1,4 @@
 {
-  "species": ["gand","human","twilek"],
-  "archetypes": ["jedi", "merchant"]
+  "species": ["bothan","duro","gand","human","twilek","wookiee"],
+  "archetypes": ["jedi", "merchant","soldier", "tech", "thug"]
 }

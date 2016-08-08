@@ -1,0 +1,43 @@
+{
+  "name": "duro",
+  "prefixes":[
+    "Dircha",
+    "Felnid",
+    "Mith",
+    "Darnis",
+    "Dushrun",
+    "Loig",
+    "Plule",
+    "Bileed",
+    "Nony",
+    "Pess",
+    "Klure",
+    "M'a",
+    "Banu",
+    "Dassid",
+    "Mirchidi",
+    "NeHimmep",
+    "Qwallo",
+    "Ruxon",
+    "Vardovin"
+  ],
+  "suffixes":[
+    "Arapto",
+    "Hydia",
+    "Mode",
+    "NeMall",
+    "Goonda",
+    "Hoh",
+    "SoGemep",
+    "Kormun",
+    "Kobees",
+    "Boo",
+    "Denai",
+    "Hall",
+    "Cree'jale",
+    "Dol",
+    "Chozar",
+    "Werd"
+  ],
+  "joiner": " "
+}
