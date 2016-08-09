@@ -17,6 +17,7 @@ export class Character{
     personalityTraits: String[];
     weapons: Weapon[];
     armour: Armour;
+    woundThreshold: number;
 
     public constructor(){
         this.attributes = new Attributes();

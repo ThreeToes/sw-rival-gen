@@ -67,7 +67,8 @@ export class CharacterGenerator {
 
         char.armour = this.selectArmour(archetypeDef);
 
-        console.log(char);
+        char.woundThreshold = speciesDef.baseHp + char.attributes.brawn;
+
         return new Observable.fromPromise(Promise.resolve(char));
     }
 
@@ -161,7 +162,7 @@ export class CharacterGenerator {
             .subscribe(body => this.personalities = body);
     }
 
-    private selectArmour(archetypeDef: ArchetypDefinition) {
+    private selectArmour(archetypeDef: ArchetypDefinition) : Armour{
         if(archetypeDef.armour.length == 0){
             return null;
         }

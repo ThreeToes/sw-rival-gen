@@ -6,5 +6,6 @@
   "suffixes":[
     "Gand"
   ],
-  "joiner": " "
+  "joiner": " ",
+  "baseHp": 10
 }

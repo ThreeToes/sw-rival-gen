@@ -6,4 +6,5 @@ export class SpeciesDefinition{
     prefixes: String[];
     suffixes: String[];
     joiner: String[];
+    baseHp: number;
 }

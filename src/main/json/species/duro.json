@@ -59,5 +59,6 @@
     "Deks",
     "Vumpem"
   ],
-  "joiner": " "
+  "joiner": " ",
+  "baseHp": 11
 }

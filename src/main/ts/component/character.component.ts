@@ -8,6 +8,8 @@ import {AttributeBlockComponent} from "./attribute.block.component";
 import {SkillBlockComponent} from "./skillblock.component";
 import {TalentBlockComponent} from "./talentblock.component";
 import {PersonalityBlockComponent} from "./personalityblock.component";
+import {WeaponsBlockComponent} from "./weaponsblock.component";
+import {ArmourComponent} from "./armour.component";
 
 @Component({
     selector: 'character-component',
@@ -18,9 +20,11 @@ import {PersonalityBlockComponent} from "./personalityblock.component";
             <skill-block [character]="character"></skill-block>
             <talent-block [character]="character"></talent-block>
             <personality-block [character]="character"></personality-block>
+            <weapons-block [character]="character"></weapons-block>
+            <armour [character]="character"></armour>
         </div>
     `,
-    directives: [InfoBlockComponent, AttributeBlockComponent, SkillBlockComponent, TalentBlockComponent, PersonalityBlockComponent]
+    directives: [ArmourComponent, InfoBlockComponent, AttributeBlockComponent, SkillBlockComponent, TalentBlockComponent, PersonalityBlockComponent, WeaponsBlockComponent]
 })
 export class CharacterComponent {
     @Input()

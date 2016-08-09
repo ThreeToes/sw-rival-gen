@@ -129,5 +129,6 @@
     "Veruna",
     "Zapalo"
   ],
-  "joiner": " "
+  "joiner": " ",
+  "baseHp": 10
 }

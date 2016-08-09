@@ -50,5 +50,6 @@
     "Senoso",
     "Mulohe"
   ],
-  "joiner": " "
+  "joiner": " ",
+  "baseHp": 10
 }

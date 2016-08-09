@@ -133,5 +133,6 @@
     "waran",
     "ziveri"
   ],
-  "joiner": "'"
+  "joiner": "'",
+  "baseHp": 10
 }
