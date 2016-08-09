@@ -10,16 +10,28 @@ var jsonMinify = require('gulp-json-minify');
 
 gulp.task("default", ["webpack-dev-server"]);
 
-gulp.task('build',['copySpeciesJson'], function(){
-    return gulp.src('src/ts/app.ts')
+gulp.task('build',['copyJson'], function(){
+    return gulp.src('src/ts/production.ts')
         .pipe(webpack(require('./webpack.common.js')))
         .pipe(gulp.dest('build/dist'))
 });
 
-gulp.task('copySpeciesJson',function () {
+gulp.task('copyJson',function () {
     return gulp.src('src/main/json/**/*.json')
         .pipe(jsonMinify())
         .pipe(gulp.dest('build/dist'));
+});
+
+gulp.task('buildDev',['copyJsonDev'], function(){
+    return gulp.src('src/ts/app.ts')
+        .pipe(webpack(require('./webpack.dev.js')))
+        .pipe(gulp.dest('build/dev'))
+});
+
+gulp.task('copyJsonDev',function () {
+    return gulp.src('src/main/json/**/*.json')
+        .pipe(jsonMinify())
+        .pipe(gulp.dest('build/dev'));
 });
 
 gulp.task("webpack-dev-server", function(callback) {

@@ -9,7 +9,7 @@ module.exports = {
     entry: {
         'polyfills': './src/main/ts/polyfills.ts',
         'vendor': './src/main/ts/vendor.ts',
-        'app': './src/main/ts/production.ts'
+        'app': './src/main/ts/app.ts'
     },
 
     resolve: {
@@ -28,7 +28,8 @@ module.exports = {
         ]
     },
     output:{
-        filename: '[name].js'
+        filename: '[name].js',
+        sourceMapFilename: '[name].map'
     },
 
     plugins: [

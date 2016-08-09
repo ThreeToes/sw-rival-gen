@@ -2,6 +2,16 @@
   "name": "bothan",
   "prefixes":[
     "Asyr",
+    "Aeg",
+    "Cast",
+    "Rok",
+    "Grast",
+    "Cesc",
+    "Niarsk",
+    "Kralol",
+    "Budust",
+    "Ukruc",
+    "Grobor",
     "Kolir",
     "Mineth",
     "Rasher",
@@ -28,7 +38,17 @@
     "Brei'e",
     "Kre'lya",
     "Se'syk",
-    "Vri'lya"
+    "Vri'lya",
+    "Gratute",
+    "Bwiav'iso",
+    "Lae'kesu",
+    "Lan'quove",
+    "Go'hena",
+    "Kod'han",
+    "Kralol",
+    "Fov'ane",
+    "Senoso",
+    "Mulohe"
   ],
   "joiner": " "
 }

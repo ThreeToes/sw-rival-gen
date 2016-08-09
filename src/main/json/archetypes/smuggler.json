@@ -1,67 +1,84 @@
 {
-  "name": "thug",
+  "name": "soldier",
   "stats": [
     {
-      "brawn": 4,
+      "brawn": 2,
       "agility": 3,
       "intelligence": 2,
       "cunning": 3,
-      "willpower": 1,
-      "presence": 2
+      "willpower": 2,
+      "presence": 3
     },
     {
       "brawn": 3,
       "agility": 2,
+      "intelligence": 3,
+      "cunning": 3,
+      "willpower": 2,
+      "presence": 2
+    },
+    {
+      "brawn": 2,
+      "agility": 2,
       "intelligence": 2,
       "cunning": 4,
-      "willpower": 1,
-      "presence": 2
+      "willpower": 2,
+      "presence": 3
     }
   ],
   "skillSets": [
     {
-      "name": "skulduggery",
+      "name": "pilotingSpace",
       "min": 2,
       "max": 3
     },
     {
       "name": "rangedLight",
+      "min": 2,
+      "max": 3
+    },
+    {
+      "name": "charm",
       "min": 1,
       "max": 3
     },
     {
-      "name": "melee",
-      "min": 1,
-      "max": 3
-    },
-    {
-      "name": "rangedHeavy",
+      "name": "negotiation",
       "min": 1,
       "max": 3
     },
     {
       "name": "deception",
       "min": 1,
-      "max": 2
-    },
-    {
-      "name": "stealth",
-      "min": 1,
-      "max": 2
+      "max": 3
     },
     {
       "name": "brawl",
-      "min": 2,
+      "min": 1,
       "max": 4
+    },
+    {
+      "name": "stealth",
+      "min": 2,
+      "max": 3
+    },
+    {
+      "name": "vigilance",
+      "min": 1,
+      "max": 2
     }
   ],
   "maxForceRating": 1,
   "forceChance": 0.05,
-  "minSkillSets": 3,
+  "minSkillSets": 2,
   "maxSkillSets": 4,
   "minTalents": 0,
   "maxTalents": 1,
   "optionalTalents": [
+    {
+      "name": "Adversary",
+      "reference": "EotE Core p132, AoR Core p142, F&D Core p138"
+    },
     {
       "name": "Kill With Kindness",
       "reference": "EotE Core p138, AoR Core p150, F&D Core p146"
@@ -69,6 +86,14 @@
     {
       "name": "Nobody's Fool",
       "reference": "EotE Core p139, AoR Core p153, F&D Core p148"
+    },
+    {
+      "name": "Convincing Demeanor",
+      "reference": "EotE Core p133, AoR Core p145, F&D Core p148"
+    },
+    {
+      "name": "Hidden Storage",
+      "reference": "EotE Core p137, AoR Core p148"
     }
   ],
   "mandatoryTalents":[],
@@ -78,7 +103,6 @@
   "minWeapons": 1,
   "maxWeapons": 2,
   "weapons":[
-
     {
       "name": "Brass Knuckles",
       "reference": "EotE Core p166, AoR Core p180, F&D Core 171",
@@ -96,37 +120,19 @@
       "damage": 6,
       "critical": 3,
       "qualities": "Stun Setting"
-    },
-    {
-      "name": "Vibro-Ax",
-      "reference": "EotE Core p167, AoR Core p182, F&D Core 175",
-      "range": "engaged",
-      "type": "melee",
-      "damage": 3,
-      "critical": 2,
-      "qualities": "Pierce 2, Sunder, Vicious"
-    },
-    {
-      "name": "Blaster Carbine",
-      "reference": "EotE Core p162, AoR Core p175, F&D Core 168",
-      "range": "medium",
-      "type": "rangedHeavy",
-      "damage": 9,
-      "critical": 3,
-      "qualities": "Stun Setting"
     }],
-    "armour":[
-      {
-        "name":"Armoured Clothing",
-        "reference": "EotE Core p169, AoR Core p184, F&D Core p178",
-        "defense": 1,
-        "soak": 1
-      },
-      {
-        "name": "Heavy Clothing",
-        "reference": "EotE Core p169, AoR Core p185, F&D Core p180",
-        "defense": 0,
-        "soak": 1
-      }
-    ]
+  "armour":[
+    {
+      "name":"Armoured Clothing",
+      "reference": "EotE Core p169, AoR Core p184, F&D Core p178",
+      "defense": 1,
+      "soak": 1
+    },
+    {
+      "name": "Heavy Clothing",
+      "reference": "EotE Core p169, AoR Core p185, F&D Core p180",
+      "defense": 0,
+      "soak": 1
+    }
+  ]
 }

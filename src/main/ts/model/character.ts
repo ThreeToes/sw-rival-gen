@@ -1,6 +1,8 @@
 import {Attributes} from "./attributes";
 import {Skills} from "./skills";
 import {Talent} from "./talent";
+import {Weapon} from "./weapon";
+import {Armour} from "./armour";
 
 /**
  * Created by poiso_000 on 28/07/2016.
@@ -13,6 +15,8 @@ export class Character{
     skills: Skills;
     talents: Talent[];
     personalityTraits: String[];
+    weapons: Weapon[];
+    armour: Armour;
 
     public constructor(){
         this.attributes = new Attributes();

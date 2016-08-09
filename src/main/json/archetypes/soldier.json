@@ -68,9 +68,70 @@
     {
       "name": "Adversary",
       "reference": "EotE Core p132, AoR Core p142, F&D Core p138"
+    },
+    {
+      "name": "Brace",
+      "reference": "EotE Core p132, AoR Core p143"
     }
   ],
   "mandatoryTalents":[],
+  "minEquipment": 1,
+  "maxEquipment": 3,
   "equipment":[],
-  "weapons":[]
+  "minWeapons": 2,
+  "maxWeapons": 3,
+  "weapons":[
+    {
+      "name": "Vibro-Ax",
+      "reference": "EotE Core p167, AoR Core p182, F&D Core 175",
+      "range": "engaged",
+      "type": "melee",
+      "damage": 3,
+      "critical": 2,
+      "qualities": "Pierce 2, Sunder, Vicious"
+    },
+    {
+      "name": "Blaster Carbine",
+      "reference": "EotE Core p162, AoR Core p175, F&D Core 168",
+      "range": "medium",
+      "type": "rangedHeavy",
+      "damage": 9,
+      "critical": 3,
+      "qualities": "Stun Setting"
+    },
+    {
+      "name": "Heavy Blaster Pistol",
+      "reference": "EotE Core p162, AoR Core p174, F&D Core 167",
+      "range": "medium",
+      "type": "rangedLight",
+      "damage": 7,
+      "critical": 3,
+      "qualities": "Stun Setting"
+    }],
+    "armour":[
+      {
+        "name":"Armoured Clothing",
+        "reference": "EotE Core p169, AoR Core p184, F&D Core p178",
+        "defense": 1,
+        "soak": 1
+      },
+      {
+        "name":"Laminate Armour",
+        "reference": "EotE Core p169, AoR Core p185",
+        "defense": 0,
+        "soak": 2
+      },
+      {
+        "name":"Heavy Battle Armour",
+        "reference": "EotE Core p170, AoR Core p184",
+        "defense": 1,
+        "soak": 2
+      },
+      {
+        "name":"Padded Armour",
+        "reference": "EotE Core p169, AoR Core p185, F&D Core p180",
+        "defense": 0,
+        "soak": 2
+      }
+    ]
 }
