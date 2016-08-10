@@ -72,9 +72,22 @@
     }
   ],
   "mandatoryTalents":[],
-  "minEquipment": 1,
-  "maxEquipment": 3,
-  "equipment":[],
+  "minEquipment": 0,
+  "maxEquipment": 1,
+  "equipment":[
+    {
+      "name": "Avabush Spice",
+      "reference": "EotE Core p183"
+    },
+    {
+      "name": "Death Stick",
+      "reference": "EotE Core p185"
+    },
+    {
+      "name": "Glitterstim",
+      "reference": "EotE Core p184"
+    }
+  ],
   "minWeapons": 1,
   "maxWeapons": 2,
   "weapons":[

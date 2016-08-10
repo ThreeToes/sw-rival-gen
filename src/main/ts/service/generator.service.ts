@@ -6,8 +6,9 @@ import {Http, Response} from '@angular/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {capitalCase,shuffle,getRandomArbitrary,getRandomElement} from "../utils";
-import {ArchetypDefinition, Character, Talent, SkillDefinition, Weapon, SpeciesDefinition} from "../model";
+import {ArchetypeDefinition, Character, Talent, SkillDefinition, Weapon, SpeciesDefinition} from "../model";
 import {Armour} from "../model/armour";
+import {Equipment} from "../model/equipment";
 
 @Injectable()
 export class CharacterGenerator {
@@ -16,7 +17,7 @@ export class CharacterGenerator {
     loaded : boolean = false;
     private species : {[id: String]: SpeciesDefinition} = {};
     private speciesLoaded : number = 0;
-    private archetypes : {[id: String] : ArchetypDefinition} = {};
+    private archetypes : {[id: String] : ArchetypeDefinition} = {};
     private archetypesLoaded : number = 0;
     private personalities = {};
 
@@ -69,10 +70,12 @@ export class CharacterGenerator {
 
         char.woundThreshold = speciesDef.baseHp + char.attributes.brawn;
 
+        char.equipment = this.selectEquipment(archetypeDef);
+
         return new Observable.fromPromise(Promise.resolve(char));
     }
 
-    private selectTalents(archetype : ArchetypDefinition) : Talent[]{
+    private selectTalents(archetype : ArchetypeDefinition) : Talent[]{
         let min = archetype.minTalents;
         let max = archetype.maxTalents;
         let si = getRandomArbitrary(min, max);
@@ -81,7 +84,7 @@ export class CharacterGenerator {
         return archetype.optionalTalents.slice(0, si);
     }
 
-    private selectSkills(archetype : ArchetypDefinition) : SkillDefinition[]{
+    private selectSkills(archetype : ArchetypeDefinition) : SkillDefinition[]{
         let min = archetype.minSkillSets;
         let max = archetype.maxSkillSets;
         let si = getRandomArbitrary(min, max);
@@ -92,7 +95,7 @@ export class CharacterGenerator {
         return archetype.skillSets.slice(0, si);
     }
 
-    private selectWeapons(archetype: ArchetypDefinition) : Weapon[]{
+    private selectWeapons(archetype: ArchetypeDefinition) : Weapon[]{
         let min = archetype.minWeapons;
         let max = archetype.maxWeapons;
         let si = getRandomArbitrary(min, max);
@@ -101,6 +104,13 @@ export class CharacterGenerator {
         shuffle(archetype.weapons);
 
         return archetype.weapons.slice(0, si);
+    }
+
+    private selectEquipment(archetype: ArchetypeDefinition): Equipment[]{
+        let min = archetype.minEquipment;
+        let max = archetype.maxEquipment;
+
+        return archetype.equipment.slice(0, getRandomArbitrary(min, max));
     }
 
     private handleError (error: any) {
@@ -162,7 +172,7 @@ export class CharacterGenerator {
             .subscribe(body => this.personalities = body);
     }
 
-    private selectArmour(archetypeDef: ArchetypDefinition) : Armour{
+    private selectArmour(archetypeDef: ArchetypeDefinition) : Armour{
         if(archetypeDef.armour.length == 0){
             return null;
         }

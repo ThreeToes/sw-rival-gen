@@ -78,9 +78,30 @@
     }
   ],
   "mandatoryTalents":[],
-  "minEquipment": 1,
+  "minEquipment": 2,
   "maxEquipment": 3,
-  "equipment":[],
+  "equipment":[
+    {
+      "name": "Slicer Gear",
+      "reference": "EotE Core p179, AoR Core p195"
+    },
+    {
+      "name": "Datapad",
+      "reference": "EotE Core p181, AoR Core p196, F&D Core p189"
+    },
+    {
+      "name": "Tool Kit",
+      "reference": "EotE Core p181, AoR Core p198, F&D Core p189"
+    },
+    {
+      "name": "Fusion Lantern",
+      "reference": "EotE Core p181, AoR Core p197, F&D Core p189"
+    },
+    {
+      "name": "Fusion Cutter",
+      "reference": "AoR Core p197"
+    }
+  ],
   "minWeapons": 0,
   "maxWeapons": 1,
   "weapons":[

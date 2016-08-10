@@ -3,6 +3,7 @@ import {Skills} from "./skills";
 import {Talent} from "./talent";
 import {Weapon} from "./weapon";
 import {Armour} from "./armour";
+import {Equipment} from "./equipment";
 
 /**
  * Created by poiso_000 on 28/07/2016.
@@ -18,6 +19,7 @@ export class Character{
     weapons: Weapon[];
     armour: Armour;
     woundThreshold: number;
+    equipment: Equipment[];
 
     public constructor(){
         this.attributes = new Attributes();

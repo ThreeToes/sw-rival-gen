@@ -78,9 +78,14 @@
     }
   ],
   "mandatoryTalents":[],
-  "minEquipment": 1,
-  "maxEquipment": 3,
-  "equipment":[],
+  "minEquipment": 0,
+  "maxEquipment": 1,
+  "equipment":[
+    {
+      "name": "Comlink",
+      "reference": "EotE Core p171, AoR Core p186, F&D Core p180"
+    }
+  ],
   "minWeapons": 0,
   "maxWeapons": 1,
   "weapons":[

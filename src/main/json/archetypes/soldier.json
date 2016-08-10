@@ -76,8 +76,25 @@
   ],
   "mandatoryTalents":[],
   "minEquipment": 1,
-  "maxEquipment": 3,
-  "equipment":[],
+  "maxEquipment": 2,
+  "equipment":[
+    {
+      "name": "Comlink",
+      "reference": "EotE Core p171, AoR Core p186, F&D Core p180"
+    },
+    {
+      "name": "Stimpack",
+      "reference": "EotE Core p177, AoR Core p193, F&D Core p186"
+    },
+    {
+      "name": "Comm Jammer",
+      "reference": "EotE Core p178, AoR Core p194"
+    },
+    {
+      "name": "Binders",
+      "reference": "EotE Core p178, AoR Core p193, F&D Core p187"
+    }
+  ],
   "minWeapons": 2,
   "maxWeapons": 3,
   "weapons":[

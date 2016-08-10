@@ -99,7 +99,28 @@
   "mandatoryTalents":[],
   "minEquipment": 1,
   "maxEquipment": 3,
-  "equipment":[],
+  "equipment":[
+    {
+      "name": "Comlink",
+      "reference": "EotE Core p171, AoR Core p186, F&D Core p180"
+    },
+    {
+      "name": "Scanner Goggles",
+      "reference": "EotE Core p175, AoR Core p191, F&D Core p185"
+    },
+    {
+      "name": "Avabush Spice",
+      "reference": "EotE Core p183"
+    },
+    {
+      "name": "Death Stick",
+      "reference": "EotE Core p185"
+    },
+    {
+      "name": "Glitterstim",
+      "reference": "EotE Core p184"
+    }
+  ],
   "minWeapons": 1,
   "maxWeapons": 2,
   "weapons":[
@@ -132,6 +153,12 @@
       "name": "Heavy Clothing",
       "reference": "EotE Core p169, AoR Core p185, F&D Core p180",
       "defense": 0,
+      "soak": 1
+    },
+    {
+      "name": "Smuggler's Trenchcoat",
+      "reference": "EotE Fly Casual p47",
+      "defense": 1,
       "soak": 1
     }
   ]

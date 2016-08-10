@@ -10,6 +10,7 @@ import {TalentBlockComponent} from "./talentblock.component";
 import {PersonalityBlockComponent} from "./personalityblock.component";
 import {WeaponsBlockComponent} from "./weaponsblock.component";
 import {ArmourComponent} from "./armour.component";
+import {EquipmentBlockComponent} from "./equipmentblock.component";
 
 @Component({
     selector: 'character-component',
@@ -18,13 +19,18 @@ import {ArmourComponent} from "./armour.component";
             <info-block [character]="character"></info-block>
             <attribute-block [character]="character"></attribute-block>
             <skill-block [character]="character"></skill-block>
-            <talent-block [character]="character"></talent-block>
-            <personality-block [character]="character"></personality-block>
-            <weapons-block [character]="character"></weapons-block>
-            <armour [character]="character"></armour>
+            <div class="personality-container">
+                <personality-block [character]="character"></personality-block>
+                <talent-block [character]="character"></talent-block>
+            </div>
+            <div class="gear-container">
+                <weapons-block [character]="character"></weapons-block>
+                <equipment-block [character]="character"></equipment-block>
+                <armour [character]="character"></armour>
+            </div>
         </div>
     `,
-    directives: [ArmourComponent, InfoBlockComponent, AttributeBlockComponent, SkillBlockComponent, TalentBlockComponent, PersonalityBlockComponent, WeaponsBlockComponent]
+    directives: [EquipmentBlockComponent,ArmourComponent, InfoBlockComponent, AttributeBlockComponent, SkillBlockComponent, TalentBlockComponent, PersonalityBlockComponent, WeaponsBlockComponent]
 })
 export class CharacterComponent {
     @Input()

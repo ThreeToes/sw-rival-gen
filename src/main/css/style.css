@@ -9,31 +9,26 @@ html,body{
     flex-direction: column;
 }
 
-.info-block-container {
+.info-block-container, .attributes-container {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
 }
 
-.info-block-entry {
+.info-block-entry, .attribute-component {
     flex-grow: 1;
     flex-wrap: wrap;
     flex-direction: column;
-    flex-basis: 25em;
     padding: 1em;
 }
 
-.attributes-container {
-    display: flex;
-    align-items: flex-start;
+.info-block-entry{
+    flex-basis: 10em;
 }
 
 .attribute-component{
-    flex-grow: 1;
-    flex-wrap: wrap;
-    flex-direction: column;
-    padding: 1em;
-    display: flex;
     flex-basis: 10em;
+    display: flex;
 }
 
 .attribute-component p,label{
@@ -50,16 +45,27 @@ html,body{
     font-weight: bold;
 }
 
-.skill-block-container{
+.skill-block-container, .personality-container, .gear-container{
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+}
+
+.weapons-block, .equipment-block, .armour-block{
+    flex-basis: 30em;
 }
 
 .skill-group-container{
     display: flex;
     flex-direction: column;
     min-width: 25em;
+}
+
+.personality-block{
+    flex-grow: 1;
+}
+.talent-block{
+    flex-grow: 4;
 }
 
 .generator-block{}

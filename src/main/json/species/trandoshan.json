@@ -1,0 +1,34 @@
+{
+  "name": "trandoshan",
+  "prefixes":[
+    "Hawarrda",
+    "Soos",
+    "Anerkha",
+    "Kras",
+    "Pessk",
+    "Gah",
+    "Sserth",
+    "Stosch",
+    "Nssjilirst",
+    "Lessk",
+    "Panrst",
+    "Hossk",
+    "Kissk",
+    "Durth",
+    "Wissrch"
+  ],
+  "suffixes":[
+    "",
+    "Gahcockaa",
+    "Malsstreela",
+    "Sasstaa",
+    "Treslak",
+    "Posskal",
+    "Messa",
+    "Gahyukk",
+    "Heweraa",
+    "Ranerass"
+  ],
+  "joiner": " ",
+  "baseHp": 12
+}
