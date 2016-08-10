@@ -4,68 +4,45 @@ html,body{
 }
 
 .character-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
 }
 
 .info-block-container, .attributes-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-}
-
-.info-block-entry, .attribute-component {
-    flex-grow: 1;
-    flex-wrap: wrap;
-    flex-direction: column;
-    padding: 1em;
 }
 
 .info-block-entry{
-    flex-basis: 10em;
-}
-
-.attribute-component{
-    flex-basis: 10em;
-    display: flex;
-}
-
-.attribute-component p,label{
     text-align: center;
 }
 
-.attribute-component p {
-    order: 1;
+.attribute-component{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.attribute-magnitude, .attribute-name{
+    text-align: center;
+}
+
+.attribute-magnitude {
     font-size: large;
 }
 
-.attribute-component label{
-    order: 2;
+.attribute-name {
     font-weight: bold;
 }
 
 .skill-block-container, .personality-container, .gear-container{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
 }
 
 .weapons-block, .equipment-block, .armour-block{
-    flex-basis: 30em;
 }
 
 .skill-group-container{
-    display: flex;
-    flex-direction: column;
-    min-width: 25em;
 }
 
 .personality-block{
-    flex-grow: 1;
 }
 .talent-block{
-    flex-grow: 4;
 }
 
 .generator-block{}

@@ -8,12 +8,9 @@ import {Character} from "../model/character";
     selector: 'info-block',
     template: `
         <div class="info-block-container">
-            <div class="info-block-entry"><strong>Name:</strong>{{character.name}}</div>
-            <div class="info-block-entry"><strong>Species:</strong>{{character.species}}</div>
-            <div class="info-block-entry"><strong>Archetype:</strong>{{character.archetype}}</div>
-            <div class="info-block-entry"><strong>Wound Threshold:</strong>{{character.woundThreshold}}</div>
-            <div class="info-block-entry" *ngIf="character.armour == null"><strong>Soak:</strong>{{character.attributes.brawn}}</div>
-            <div class="info-block-entry" *ngIf="character.armour != null"><strong>Soak:</strong>{{character.attributes.brawn + character.armour.soak}}</div>
+            <div class="info-block-entry col-xs-12 col-sm-4 col-lg-4"><strong>Name:</strong>{{character.name}}</div>
+            <div class="info-block-entry col-xs-12 col-sm-4 col-lg-4"><strong>Species:</strong>{{character.species}}</div>
+            <div class="info-block-entry col-xs-12 col-sm-4 col-lg-4"><strong>Archetype:</strong>{{character.archetype}}</div>
         </div>
     `
 })

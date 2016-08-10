@@ -24,6 +24,22 @@
       "cunning": 3,
       "willpower": 2,
       "presence": 3
+    },
+    {
+      "brawn": 2,
+      "agility": 2,
+      "intelligence": 3,
+      "cunning": 2,
+      "willpower": 3,
+      "presence": 4
+    },
+    {
+      "brawn": 2,
+      "agility": 3,
+      "intelligence": 2,
+      "cunning": 2,
+      "willpower": 3,
+      "presence": 4
     }
   ],
   "skillSets": [

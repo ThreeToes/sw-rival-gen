@@ -19,14 +19,14 @@ import {EquipmentBlockComponent} from "./equipmentblock.component";
             <info-block [character]="character"></info-block>
             <attribute-block [character]="character"></attribute-block>
             <skill-block [character]="character"></skill-block>
-            <div class="personality-container">
-                <personality-block [character]="character"></personality-block>
-                <talent-block [character]="character"></talent-block>
+            <div class="personality-container container-fluid">
+                <personality-block [character]="character" class="col-xs-12 col-sm-6 col-lg-6"></personality-block>
+                <talent-block [character]="character" class="col-xs-12 col-sm-6 col-lg-6"></talent-block>
             </div>
-            <div class="gear-container">
-                <weapons-block [character]="character"></weapons-block>
-                <equipment-block [character]="character"></equipment-block>
-                <armour [character]="character"></armour>
+            <div class="gear-container container-fluid">
+                <weapons-block [character]="character" class="col-xs-12 col-sm-4 col-lg-4"></weapons-block>
+                <equipment-block [character]="character" class="col-xs-12 col-sm-4 col-lg-4"></equipment-block>
+                <armour [character]="character" class="col-xs-12 col-sm-4 col-lg-4"></armour>
             </div>
         </div>
     `,

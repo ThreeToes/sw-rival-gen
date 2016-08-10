@@ -15,6 +15,14 @@ import {Character} from "../model/character";
                 <li><strong>Reference:</strong> {{character.armour.reference}}</li>
             </ul>
         </div>
+        <div class="armour-container" *ngIf="character.armour == null">
+            <h3>Armour - Regular Clothing</h3>
+            <ul>
+                <li><strong>Soak:</strong> 0</li>
+                <li><strong>Defense:</strong> 0</li>
+                <li><strong>Reference:</strong> N/A</li>
+            </ul>
+        </div>
     `
 })
 export class ArmourComponent{

@@ -8,8 +8,8 @@ import {SkillComponent} from "./skill.component";
 @Component({
     selector: 'skill-block',
     template: `
-    <div class="skill-block-container">
-        <div class="skill-group-container">
+    <div class="skill-block-container container-fluid">
+        <div class="skill-group-container col-xs-12 col-sm-4 col-lg-4">
             <h3>Core Skills</h3>
             <skill [magnitude]="character.skills.astrogation" [skillName]="'Astrogation'"></skill>
             <skill [magnitude]="character.skills.athletics" [skillName]="'Athletics'"></skill>
@@ -34,7 +34,7 @@ import {SkillComponent} from "./skill.component";
             <skill [magnitude]="character.skills.survival" [skillName]="'Survival'"></skill>
             <skill [magnitude]="character.skills.vigilance" [skillName]="'Vigilance'"></skill>
         </div>
-        <div class="skill-group-container">
+        <div class="skill-group-container col-xs-12 col-sm-4 col-lg-4">
             <h3>Combat Skills</h3>
             <skill [magnitude]="character.skills.brawl" [skillName]="'Brawl'"></skill>
             <skill [magnitude]="character.skills.gunnery" [skillName]="'Gunnery'"></skill>
@@ -43,7 +43,7 @@ import {SkillComponent} from "./skill.component";
             <skill [magnitude]="character.skills.rangedLight" [skillName]="'Ranged (Light)'"></skill>
             <skill [magnitude]="character.skills.rangedHeavy" [skillName]="'Ranged (Heavy)'"></skill>
         </div>
-        <div class="skill-group-container">
+        <div class="skill-group-container col-xs-12 col-sm-4 col-lg-4">
         <h3>Knowledge Skills</h3>
             <skill [magnitude]="character.skills.coreWorlds" [skillName]="'Core Worlds'"></skill>
             <skill [magnitude]="character.skills.education" [skillName]="'Education'"></skill>

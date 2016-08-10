@@ -12,7 +12,7 @@ require('../../../../node_modules/bootstrap/dist/css/bootstrap.min.css');
 @Component({
     selector: 'npc-generator',
     template: `
-        <div class="generator-block" *ngIf="charGenerator.loaded">
+        <div class="container-fluid" *ngIf="charGenerator.loaded">
             <strong>Species</strong>
             <select [(ngModel)]="selectedSpecies">
                 <option value="random" selected>Random</option>
@@ -25,7 +25,7 @@ require('../../../../node_modules/bootstrap/dist/css/bootstrap.min.css');
             <button (click)="generateNewCharacter()">Generate Character</button>
         </div>
         <character-component [character]="currentCharacter" *ngIf="charGenerator.loaded && currentCharacter.isInitialised()"></character-component>
-        <div class="loading-block" *ngIf="!charGenerator.loaded"><h2>Loading...</h2></div>
+        <div class="container-fluid" *ngIf="!charGenerator.loaded"><h2>Loading...</h2></div>
     `,
     directives: [CharacterComponent],
     providers: [{provide: CharacterGenerator, useClass: CharacterGenerator}]

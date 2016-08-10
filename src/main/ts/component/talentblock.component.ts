@@ -8,7 +8,7 @@ import {TalentComponent} from "./talent.component";
 @Component({
     selector: 'talent-block',
     template: `
-        <div class="talent-block" *ngIf="character.talents.length > 0">
+        <div class="talent-block">
             <h3>Talents</h3>
             <talent *ngFor="let talent of character.talents" [talent]="talent"></talent>
         </div>
