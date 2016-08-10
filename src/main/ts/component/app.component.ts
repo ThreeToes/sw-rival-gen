@@ -13,16 +13,20 @@ require('../../../../node_modules/bootstrap/dist/css/bootstrap.min.css');
     selector: 'npc-generator',
     template: `
         <div class="container-fluid" *ngIf="charGenerator.loaded">
+        <div class="col-xs-12 col-sm-3">
             <strong>Species</strong>
             <select [(ngModel)]="selectedSpecies">
                 <option value="random" selected>Random</option>
                 <option *ngFor="let s of charGenerator.manifest.species" [value]="s">{{s}}</option>
             </select>
+            </div>
+            <div class="col-xs-12 col-sm-3">
             <strong>Archetype</strong>
             <select [(ngModel)]="selectedArchetype">
                 <option  *ngFor="let a of charGenerator.manifest.archetypes" [value]="a">{{a}}</option>
             </select>
-            <button (click)="generateNewCharacter()">Generate Character</button>
+            </div>
+            <button class="col-xs-12 col-sm-3" (click)="generateNewCharacter()">Generate Character</button>
         </div>
         <character-component [character]="currentCharacter" *ngIf="charGenerator.loaded && currentCharacter.isInitialised()"></character-component>
         <div class="container-fluid" *ngIf="!charGenerator.loaded"><h2>Loading...</h2></div>
