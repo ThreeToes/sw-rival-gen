@@ -14,9 +14,6 @@ html,body{
 }
 
 .attribute-component{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
 
 .attribute-magnitude, .attribute-name{
