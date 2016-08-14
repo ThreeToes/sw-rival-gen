@@ -26,4 +26,5 @@ export class ArchetypeDefinition{
     maxWeapons: number;
     weapons: Weapon[];
     armour: Armour[];
+    weaponLoadouts: String[];
 }

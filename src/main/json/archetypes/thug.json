@@ -98,46 +98,9 @@
       "reference": "EotE Core p184"
     }
   ],
-  "minWeapons": 1,
-  "maxWeapons": 2,
-  "weapons":[
-
-    {
-      "name": "Brass Knuckles",
-      "reference": "EotE Core p166, AoR Core p180, F&D Core 171",
-      "range": "engaged",
-      "type": "brawl",
-      "damage": 1,
-      "critical": 4,
-      "qualities": "Disorient 3"
-    },
-    {
-      "name": "Blaster Pistol",
-      "reference": "EotE Core p161, AoR Core p174, F&D Core 171",
-      "range": "short",
-      "type": "rangedLight",
-      "damage": 6,
-      "critical": 3,
-      "qualities": "Stun Setting"
-    },
-    {
-      "name": "Vibro-Ax",
-      "reference": "EotE Core p167, AoR Core p182, F&D Core 175",
-      "range": "engaged",
-      "type": "melee",
-      "damage": 3,
-      "critical": 2,
-      "qualities": "Pierce 2, Sunder, Vicious"
-    },
-    {
-      "name": "Blaster Carbine",
-      "reference": "EotE Core p162, AoR Core p175, F&D Core 168",
-      "range": "medium",
-      "type": "rangedHeavy",
-      "damage": 9,
-      "critical": 3,
-      "qualities": "Stun Setting"
-    }],
+  "minWeapons": 0,
+  "maxWeapons": 1,
+  "weapons":[],
     "armour":[
       {
         "name":"Armoured Clothing",
@@ -151,5 +114,6 @@
         "defense": 0,
         "soak": 1
       }
-    ]
+    ],
+    "weaponLoadouts":["pistoleer", "brawler", "bruiser"]
 }

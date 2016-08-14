@@ -1,4 +1,5 @@
 {
   "species": ["bothan","duro","gand","human","rodian","trandoshan","twilek","wookiee"],
-  "archetypes": ["jedi", "merchant","smuggler","soldier", "tech", "thug"]
+  "archetypes": ["jedi", "merchant","smuggler","soldier", "tech", "thug"],
+  "weaponLoadouts": ["brawler","bruiser","heavy","jedi","pistoleer","unarmed"]
 }

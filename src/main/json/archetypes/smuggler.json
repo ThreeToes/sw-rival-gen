@@ -121,27 +121,9 @@
       "reference": "EotE Core p184"
     }
   ],
-  "minWeapons": 1,
-  "maxWeapons": 2,
-  "weapons":[
-    {
-      "name": "Brass Knuckles",
-      "reference": "EotE Core p166, AoR Core p180, F&D Core 171",
-      "range": "engaged",
-      "type": "brawl",
-      "damage": 1,
-      "critical": 4,
-      "qualities": "Disorient 3"
-    },
-    {
-      "name": "Blaster Pistol",
-      "reference": "EotE Core p161, AoR Core p174, F&D Core 171",
-      "range": "short",
-      "type": "rangedLight",
-      "damage": 6,
-      "critical": 3,
-      "qualities": "Stun Setting"
-    }],
+  "minWeapons": 0,
+  "maxWeapons": 1,
+  "weapons":[],
   "armour":[
     {
       "name":"Armoured Clothing",
@@ -161,5 +143,6 @@
       "defense": 1,
       "soak": 1
     }
-  ]
+  ],
+  "weaponLoadouts":["pistoleer", "brawler"]
 }

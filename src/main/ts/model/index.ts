@@ -10,3 +10,4 @@ export * from './equipment';
 export * from './skilldefinition';
 export * from './weapon';
 export * from './speciesdefinition';
+export * from './weaponloadout';

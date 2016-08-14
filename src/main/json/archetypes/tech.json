@@ -104,15 +104,7 @@
   ],
   "minWeapons": 0,
   "maxWeapons": 1,
-  "weapons":[
-    {
-      "name": "Blaster Pistol",
-      "reference": "EotE Core p161, AoR Core p174, F&D Core 171",
-      "range": "short",
-      "type": "rangedLight",
-      "damage": 6,
-      "critical": 3,
-      "qualities": "Stun Setting"
-    }],
-  "armour":[]
+  "weapons":[],
+  "armour":[],
+  "weaponLoadouts":["unarmed"]
 }

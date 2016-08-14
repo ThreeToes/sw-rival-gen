@@ -1,0 +1,111 @@
+{
+    "name": "heavy",
+    "primarySkill": "rangedHeavy",
+    "baseLoadout":[
+        {
+            "name": "Blaster Rifle",
+            "reference": "EotE Core p162, AoR Core p175, F&D Core 168",
+            "range": "long",
+            "type": "rangedHeavy",
+            "damage": 9,
+            "critical": 3,
+            "qualities": "Stun Setting"
+        }
+    ],
+    "substitutions":{
+        "Blaster Rifle":[
+            {
+                "name": "Blaster Carbine",
+                "reference": "EotE Core p162, AoR Core p175, F&D Core 168",
+                "range": "medium",
+                "type": "rangedHeavy",
+                "damage": 9,
+                "critical": 3,
+                "qualities": "Stun Setting"
+            },
+            {
+                "name": "Heavy Blaster Rifle",
+                "reference": "EotE Core p162, AoR Core p176",
+                "range": "long",
+                "type": "rangedHeavy",
+                "damage": 10,
+                "critical": 3,
+                "qualities": "Auto-fire, Cumbersome 3"
+            },
+            {
+                "name": "Light Repeating Blaster",
+                "reference": "EotE Core p162, AoR Core p175, F&D Core 168",
+                "range": "long",
+                "type": "rangedHeavy",
+                "damage": 11,
+                "critical": 3,
+                "qualities": "Auto-fire, Cumbersome 4, Pierce 1"
+            },
+            {
+                "name": "Adostic Arms 8-Gauge Scatter Gun",
+                "reference": "EotE Fly Casual p44",
+                "range": "short",
+                "type": "rangedHeavy",
+                "damage": 7,
+                "critical": 3,
+                "qualities": "Blast 3, Knockdown"
+            },
+            {
+                "name": "ACP Array Gun",
+                "reference": "EotE Dangerous Covenants p42",
+                "range": "short",
+                "type": "rangedHeavy",
+                "damage": 6,
+                "critical": 3,
+                "qualities": "Blast 5, Stun Setting"
+            },
+            {
+                "name": "DH-X Heavy Blaster Rifle",
+                "reference": "EotE Dangerous Covenants p43",
+                "range": "long",
+                "type": "rangedHeavy",
+                "damage": 10,
+                "critical": 3,
+                "qualities": "Auto-fire, Pierce 2"
+            },
+            {
+                "name": "Sorosub OK-98 Blaster Carbine",
+                "reference": "EotE Dangerous Covenants p43",
+                "range": "medium",
+                "type": "rangedHeavy",
+                "damage": 9,
+                "critical": 3,
+                "qualities": "Stun Setting"
+            },
+            {
+                "name": "VX Sidewinder Repeating Blaster",
+                "reference": "EotE Dangerous Covenants p43",
+                "range": "long",
+                "type": "gunnery",
+                "damage": 12,
+                "critical": 3,
+                "qualities": "Auto-fire, Cumbersome 5, Pierce 1, Vicious 1"
+            },
+            {
+                "name": "Flachette Launcher",
+                "reference": "EotE Dangerous Covenants p45",
+                "range": "medium",
+                "type": "gunnery",
+                "damage": 8,
+                "critical": 3,
+                "qualities": "Blast 8, Cumbersome 3, Limited Ammo 4, Pierce 6, Prepare 1, Vicious 1"
+            }
+        ]
+    },
+    "additionalOptions":[
+        {
+            "name": "Heavy Blaster Pistol",
+            "reference": "EotE Core p162, AoR Core p174, F&D Core 167",
+            "range": "medium",
+            "type": "rangedLight",
+            "damage": 7,
+            "critical": 3,
+            "qualities": "Stun Setting"
+        }
+    ]
+}

@@ -33,19 +33,19 @@
       "max": 3
     },
     {
-      "name": "rangedLight",
+      "name": "gunnery",
       "min": 2,
       "max": 3
+    },
+    {
+      "name": "rangedLight",
+      "min": 1,
+      "max": 2
     },
     {
       "name": "melee",
       "min": 1,
       "max": 3
-    },
-    {
-      "name": "brawl",
-      "min": 1,
-      "max": 4
     },
     {
       "name": "stealth",
@@ -61,7 +61,7 @@
   "maxForceRating": 1,
   "forceChance": 0.05,
   "minSkillSets": 3,
-  "maxSkillSets": 3,
+  "maxSkillSets": 4,
   "minTalents": 0,
   "maxTalents": 1,
   "optionalTalents": [
@@ -95,36 +95,9 @@
       "reference": "EotE Core p178, AoR Core p193, F&D Core p187"
     }
   ],
-  "minWeapons": 2,
-  "maxWeapons": 3,
-  "weapons":[
-    {
-      "name": "Vibro-Ax",
-      "reference": "EotE Core p167, AoR Core p182, F&D Core 175",
-      "range": "engaged",
-      "type": "melee",
-      "damage": 3,
-      "critical": 2,
-      "qualities": "Pierce 2, Sunder, Vicious"
-    },
-    {
-      "name": "Blaster Carbine",
-      "reference": "EotE Core p162, AoR Core p175, F&D Core 168",
-      "range": "medium",
-      "type": "rangedHeavy",
-      "damage": 9,
-      "critical": 3,
-      "qualities": "Stun Setting"
-    },
-    {
-      "name": "Heavy Blaster Pistol",
-      "reference": "EotE Core p162, AoR Core p174, F&D Core 167",
-      "range": "medium",
-      "type": "rangedLight",
-      "damage": 7,
-      "critical": 3,
-      "qualities": "Stun Setting"
-    }],
+  "minWeapons": 0,
+  "maxWeapons": 1,
+  "weapons":[],
     "armour":[
       {
         "name":"Armoured Clothing",
@@ -150,5 +123,6 @@
         "defense": 0,
         "soak": 2
       }
-    ]
+    ],
+    "weaponLoadouts":["pistoleer", "bruiser", "heavy"]
 }

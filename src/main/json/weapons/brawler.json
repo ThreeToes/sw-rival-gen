@@ -1,0 +1,93 @@
+{
+  "name": "brawler",
+  "primarySkill": "brawl",
+  "baseLoadout":[
+    {
+      "name": "Brass Knuckles",
+      "reference": "EotE Core p166, AoR Core p180, F&D Core 171",
+      "range": "engaged",
+      "type": "brawl",
+      "damage": 1,
+      "critical": 4,
+      "qualities": "Disorient 3"
+    }
+  ],
+  "substitutions":{
+    "Brass Knuckles": [
+      {
+        "name": "Vibroknucklers",
+        "reference": "EotE Fly Casual p42",
+        "range": "engaged",
+        "type": "brawl",
+        "damage": 1,
+        "critical": 2,
+        "qualities": "Pierce 1, Vicious 1"
+      },
+      {
+        "name": "Shock Gloves",
+        "reference": "EotE Core p166, AoR Core p181, F&D Core p171",
+        "range": "engaged",
+        "type": "brawl",
+        "damage": 0,
+        "critical": 5,
+        "qualities": "Stun 3"
+      },
+      {
+        "name": "Blast Knuckles",
+        "reference": "EotE Dangerous Covenants p48",
+        "range": "engaged",
+        "type": "brawl",
+        "damage": 4,
+        "critical": 4,
+        "qualities": "Inaccurate 1"
+      },
+      {
+        "name": "Backhand Shock Gloves",
+        "reference": "EotE Far Horizons p42",
+        "range": "engaged",
+        "type": "brawl",
+        "damage": 1,
+        "critical": 3,
+        "qualities": "Concussive 1, Stun Damage, Slow-Firing 1"
+      },
+      {
+        "name": "Shock Boots",
+        "reference": "EotE Fly Casual",
+        "range": "engaged",
+        "type": "brawl",
+        "damage": 0,
+        "critical": 5,
+        "qualities": "Disorient 3, Stun 3"
+      }
+    ]
+  },
+  "additionalOptions":[
+     {
+       "name": "Vibroknife",
+        "reference": "EotE Core p167, AoR Core p182, F&D Core 175",
+        "range": "engaged",
+        "type": "melee",
+        "damage": 1,
+        "critical": 2,
+        "qualities": "Pierce 2, Vicious 1"
+     },
+    {
+      "name": "Holdout Pistol",
+      "reference": "EotE Core p161, AoR Core p174, F&D Core 167",
+      "range": "short",
+      "type": "rangedLight",
+      "damage": 5,
+      "critical": 4,
+      "qualities": "Stun Setting"
+    },
+    {
+      "name": "Punch Dagger",
+      "reference": "EotE Fly Casual p46",
+      "range": "engaged",
+      "type": "melee",
+      "damage": 1,
+      "critical": 3,
+      "qualities": "Pierce 1, Add 2 setback to perception checks to detect"
+    }
+  ]
+}

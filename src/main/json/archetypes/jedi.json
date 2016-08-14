@@ -194,36 +194,9 @@
   "minEquipment": 1,
   "maxEquipment": 3,
   "equipment":[],
-  "minWeapons": 1,
-  "maxWeapons": 2,
-  "weapons":[
-    {
-      "name": "Vibrosword",
-      "reference": "EotE Core p166, AoR Core p180, F&D Core 171",
-      "range": "engaged",
-      "type": "melee",
-      "damage": 2,
-      "critical": 2,
-      "qualities": "Pierce 2, Vicious 1"
-    },
-    {
-      "name": "Blaster Pistol",
-      "reference": "EotE Core p161, AoR Core p174, F&D Core 171",
-      "range": "short",
-      "type": "rangedLight",
-      "damage": 6,
-      "qualities": "Stun Setting"
-    },
-    {
-      "name": "Lightsaber",
-      "reference": "EotE Core p167, AoR Core p182, F&D Core 175",
-      "range": "engaged",
-      "type": "lightsaber",
-      "damage": 10,
-      "critical": 1,
-      "qualities": "Breach 1, Sunder, Vicious 3"
-    }
-  ],
+  "minWeapons": 0,
+  "maxWeapons": 1,
+  "weapons":[],
   "armour":[
     {
       "name":"Armoured Clothing",
@@ -249,5 +222,6 @@
       "defense": 1,
       "soak": 2
     }
-  ]
+  ],
+  "weaponLoadouts":["jedi"]
 }

@@ -9,17 +9,20 @@ import {capitalCase,shuffle,getRandomArbitrary,getRandomElement} from "../utils"
 import {ArchetypeDefinition, Character, Talent, SkillDefinition, Weapon, SpeciesDefinition} from "../model";
 import {Armour} from "../model/armour";
 import {Equipment} from "../model/equipment";
+import {WeaponLoadout} from "../model/weaponloadout";
 
 @Injectable()
 export class CharacterGenerator {
 
-    manifest = {"species":[],"archetypes":[]};
+    manifest = {"species":[],"archetypes":[],"weaponLoadouts":[]};
     loaded : boolean = false;
     private species : {[id: String]: SpeciesDefinition} = {};
     private speciesLoaded : number = 0;
     private archetypes : {[id: String] : ArchetypeDefinition} = {};
     private archetypesLoaded : number = 0;
     private personalities = {};
+    private weaponLoadouts: {[id: String]: WeaponLoadout} = {};
+    private weaponLoadoutsLoaded : number = 0;
 
     constructor(private http : Http){
     }
@@ -64,7 +67,7 @@ export class CharacterGenerator {
 
         char.talents = this.selectTalents(archetypeDef);
 
-        char.weapons = this.selectWeapons(archetypeDef);
+        char.weapons = this.selectWeapons(archetypeDef, char);
 
         char.armour = this.selectArmour(archetypeDef);
 
@@ -95,15 +98,44 @@ export class CharacterGenerator {
         return archetype.skillSets.slice(0, si);
     }
 
-    private selectWeapons(archetype: ArchetypeDefinition) : Weapon[]{
+    private selectWeapons(archetype: ArchetypeDefinition, character: Character) : Weapon[]{
+        var weaponLoadouts = archetype.weaponLoadouts.map(x => this.weaponLoadouts[x]);
+        let maxSkill = 0;
+        let selectedLoadout = getRandomElement(weaponLoadouts);
+        for(let s of weaponLoadouts){
+            let skillMagnitude = character.skills[s.primarySkill];
+            if(skillMagnitude > maxSkill){
+                selectedLoadout = s;
+                maxSkill = skillMagnitude;
+            }
+        }
+        //Clone the list so we don't glob the base
+        let selectedWeapons = selectedLoadout.baseLoadout.slice(0, selectedLoadout.baseLoadout.length);
+        let subs = selectedLoadout.substitutions;
+        for(let i = 0; i < selectedWeapons.length; i++){
+            if(getRandomArbitrary(0,1)){
+                //Flip a coin to see if we'll substitute
+                continue;
+            }
+            let consider = selectedWeapons[i];
+            let validSubs = subs[consider.name];
+            if(validSubs && validSubs.length > 0) {
+                //Swap in the sub in place
+                selectedWeapons[i] = getRandomElement(validSubs);
+            }
+        }
+
         let min = archetype.minWeapons;
         let max = archetype.maxWeapons;
         let si = getRandomArbitrary(min, max);
+        if(si && selectedLoadout.additionalOptions.length) {
+            let optional = selectedLoadout.additionalOptions;
+            while(si--){
+                selectedWeapons.push(getRandomElement(optional));
+            }
+        }
 
-        //Flicks the array around in place, but should be ok
-        shuffle(archetype.weapons);
-
-        return archetype.weapons.slice(0, si);
+        return selectedWeapons;
     }
 
     private selectEquipment(archetype: ArchetypeDefinition): Equipment[]{
@@ -129,12 +161,19 @@ export class CharacterGenerator {
     private setLoadState(){
         this.loaded =
             this.speciesLoaded >= this.manifest.species.length
-            && this.archetypesLoaded >= this.manifest.archetypes.length;
+            && this.archetypesLoaded >= this.manifest.archetypes.length
+            && this.weaponLoadoutsLoaded >= this.manifest.weaponLoadouts.length;
     }
 
     private extractArchetypeData(body) : void {
         this.archetypes[body.name] = body;
         this.archetypesLoaded++;
+        this.setLoadState();
+    }
+
+    private extractLoadoutData(body) : void {
+        this.weaponLoadouts[body.name] = body;
+        this.weaponLoadoutsLoaded++;
         this.setLoadState();
     }
 
@@ -162,8 +201,16 @@ export class CharacterGenerator {
                         .catch(this.handleError)
                         .subscribe(a => this.extractArchetypeData(a));
                 }
+                for(let a of body.weaponLoadouts){
+                    let url = 'weapons/'+a+'.json';
+                    this.http.get(url)
+                        .map(this.getJson)
+                        .catch(this.handleError)
+                        .subscribe(a => this.extractLoadoutData(a));
+                }
                 this.manifest.species = body.species;
                 this.manifest.archetypes = body.archetypes;
+                this.manifest.weaponLoadouts = body.weaponLoadouts;
             });
         let personalityUrl = 'personalities.json';
         this.http.get(personalityUrl)

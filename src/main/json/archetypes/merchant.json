@@ -104,25 +104,7 @@
   ],
   "minWeapons": 0,
   "maxWeapons": 1,
-  "weapons":[
-    {
-      "name": "Vibroknife",
-      "reference": "EotE Core p167, AoR Core p182, F&D Core 175",
-      "range": "engaged",
-      "type": "melee",
-      "damage": 1,
-      "critical": 2,
-      "qualities": "Pierce 2, Vicious 1"
-    },
-    {
-      "name": "Holdout Pistol",
-      "reference": "EotE Core p161, AoR Core p174, F&D Core 167",
-      "range": "short",
-      "type": "rangedLight",
-      "damage": 5,
-      "critical": 4,
-      "qualities": "Stun Setting"
-    }
-  ],
-  "armour": []
+  "weapons":[],
+  "armour": [],
+  "weaponLoadouts":["unarmed"]
 }
